@@ -1,11 +1,25 @@
 {
 	"variables": {
-		"client_id": "{{env `ARM_CLIENT_ID`}}",
-		"client_secret": "{{env `ARM_CLIENT_SECRET`}}",
-		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
+		"client_id": "7be7b5ff-9833-47a9-a287-3e00559f4732",
+		"client_secret": "luT7Q~ETZ2Um4l62vVFSXQtWUvSnbNOTtV~qR",
+		"subscription_id": "b0ab72ae-7000-4034-80d3-600cca548bf1"
 	},
 	"builders": [{
-		**YOUR CODE HERE**
+		"type": "azure-arm",
+		"client_id": "{{user `client_id`}}",
+		"client_secret": "{{user `client_secret`}}",
+		"subscription_id": "{{user `subscription_id`}}",
+		"os_type": "Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+		"managed_image_resource_group_name": "udacity-demo-rg",
+		"managed_image_name": "demoProjectUbuntuImage",
+		"location": "westeurope",
+		"vm_size": "Standard_DS1_v2",
+		"azure_tags": {
+			"scope": "demo"
+		}
 	}],
 	"provisioners": [{
 		"inline": [
@@ -13,6 +27,6 @@
 			"nohup busybox httpd -f -p 80 &"
 		],
 		"inline_shebang": "/bin/sh -x",
-		"type: "shell"
+		"type": "shell"
 	}]
 }
