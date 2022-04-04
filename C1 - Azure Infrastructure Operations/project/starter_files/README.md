@@ -4,7 +4,7 @@
 This project allows a user to setup a scalable web server with a configurable number of virtual machines
 
 ### Getting Started
-you need to have terraform and packer installed and also azure cli
+you need to have terraform, packer and azure cli installed
 
 ### Dependencies
 1. Create an [Azure Account](https://portal.azure.com) 
